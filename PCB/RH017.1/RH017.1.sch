@@ -3514,7 +3514,7 @@ or will meet your specific requirements.&lt;p&gt;
 <part name="S1" library="switch-tact" deviceset="DTSM-3" device="" value="RESET"/>
 <part name="GND9" library="supply1" deviceset="GND" device=""/>
 <part name="R2" library="SparkFun" deviceset="RESISTOR" device="0805-RES" value="4.7k"/>
-<part name="P+3" library="SparkFun" deviceset="VCC" device="" value="3.3V"/>
+<part name="3.3V" library="SparkFun" deviceset="VCC" device="" value="3.3V"/>
 <part name="SJ23" library="jumper" deviceset="SJ" device=""/>
 <part name="SJ24" library="jumper" deviceset="SJ" device=""/>
 </parts>
@@ -3642,7 +3642,7 @@ or will meet your specific requirements.&lt;p&gt;
 <instance part="S1" gate="G$1" x="153.67" y="54.61"/>
 <instance part="GND9" gate="1" x="153.67" y="43.18"/>
 <instance part="R2" gate="G$1" x="162.56" y="63.5" rot="R180"/>
-<instance part="P+3" gate="1" x="170.18" y="68.58"/>
+<instance part="3.3V" gate="1" x="170.18" y="68.58"/>
 <instance part="SJ23" gate="1" x="125.73" y="58.42"/>
 <instance part="SJ24" gate="1" x="125.73" y="45.72"/>
 </instances>
@@ -3679,8 +3679,8 @@ or will meet your specific requirements.&lt;p&gt;
 </segment>
 <segment>
 <pinref part="GND14" gate="1" pin="GND"/>
-<wire x1="233.68" y1="64.77" x2="233.68" y2="67.31" width="0.1524" layer="91"/>
 <pinref part="MDL1" gate="G$1" pin="GND"/>
+<wire x1="233.68" y1="67.31" x2="233.68" y2="64.77" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <wire x1="87.63" y1="30.48" x2="87.63" y2="33.02" width="0.1524" layer="91"/>
@@ -4054,6 +4054,12 @@ or will meet your specific requirements.&lt;p&gt;
 <pinref part="R9" gate="G$1" pin="1"/>
 <junction x="13.97" y="151.13"/>
 </segment>
+<segment>
+<pinref part="R2" gate="G$1" pin="1"/>
+<pinref part="3.3V" gate="1" pin="VCC"/>
+<wire x1="167.64" y1="63.5" x2="170.18" y2="63.5" width="0.1524" layer="91"/>
+<wire x1="170.18" y1="63.5" x2="170.18" y2="68.58" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="VREG" class="0">
 <segment>
@@ -4293,26 +4299,34 @@ or will meet your specific requirements.&lt;p&gt;
 </net>
 <net name="GP_CSO" class="0">
 <segment>
-<wire x1="210.82" y1="52.07" x2="210.82" y2="31.75" width="0.1524" layer="91"/>
 <label x="210.82" y="31.75" size="1.778" layer="95" rot="R90"/>
+<pinref part="MDL1" gate="G$1" pin="CS0"/>
+<wire x1="210.82" y1="52.07" x2="210.82" y2="31.75" width="0.1524" layer="91"/>
+<junction x="210.82" y="52.07"/>
 </segment>
 </net>
 <net name="GP_MOSI" class="0">
 <segment>
-<wire x1="220.98" y1="52.07" x2="220.98" y2="31.75" width="0.1524" layer="91"/>
 <label x="220.98" y="31.75" size="1.778" layer="95" rot="R90"/>
+<pinref part="MDL1" gate="G$1" pin="MOSI"/>
+<wire x1="220.98" y1="52.07" x2="220.98" y2="31.75" width="0.1524" layer="91"/>
+<junction x="220.98" y="52.07"/>
 </segment>
 </net>
 <net name="GP_MISO" class="0">
 <segment>
 <wire x1="213.36" y1="31.75" x2="213.36" y2="52.07" width="0.1524" layer="91"/>
 <label x="213.36" y="31.75" size="1.778" layer="95" rot="R90"/>
+<pinref part="MDL1" gate="G$1" pin="MISO"/>
+<junction x="213.36" y="52.07"/>
 </segment>
 </net>
 <net name="GP_SCLK" class="0">
 <segment>
-<wire x1="223.52" y1="52.07" x2="223.52" y2="31.75" width="0.1524" layer="91"/>
 <label x="223.52" y="31.75" size="1.778" layer="95" rot="R90"/>
+<pinref part="MDL1" gate="G$1" pin="SCLK"/>
+<wire x1="223.52" y1="52.07" x2="223.52" y2="31.75" width="0.1524" layer="91"/>
+<junction x="223.52" y="52.07"/>
 </segment>
 </net>
 <net name="IRQ" class="0">
@@ -4393,6 +4407,8 @@ or will meet your specific requirements.&lt;p&gt;
 <segment>
 <wire x1="218.44" y1="31.75" x2="218.44" y2="52.07" width="0.1524" layer="91"/>
 <label x="218.44" y="31.75" size="1.778" layer="95" rot="R90"/>
+<pinref part="MDL1" gate="G$1" pin="GPIO10"/>
+<junction x="218.44" y="52.07"/>
 </segment>
 <segment>
 <pinref part="SJ5" gate="1" pin="1"/>
@@ -4665,6 +4681,8 @@ or will meet your specific requirements.&lt;p&gt;
 <segment>
 <wire x1="215.9" y1="31.75" x2="215.9" y2="52.07" width="0.1524" layer="91"/>
 <label x="215.9" y="31.75" size="1.778" layer="95" rot="R90"/>
+<pinref part="MDL1" gate="G$1" pin="GPIO9"/>
+<junction x="215.9" y="52.07"/>
 </segment>
 </net>
 <net name="LED1" class="0">
@@ -4716,14 +4734,6 @@ or will meet your specific requirements.&lt;p&gt;
 <wire x1="124.46" y1="90.17" x2="124.46" y2="95.25" width="0.1524" layer="91"/>
 <junction x="124.46" y="95.25"/>
 <label x="133.35" y="95.25" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="VCC" class="0">
-<segment>
-<pinref part="R2" gate="G$1" pin="1"/>
-<pinref part="P+3" gate="1" pin="VCC"/>
-<wire x1="167.64" y1="63.5" x2="170.18" y2="63.5" width="0.1524" layer="91"/>
-<wire x1="170.18" y1="63.5" x2="170.18" y2="68.58" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
